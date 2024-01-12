@@ -1,0 +1,53 @@
+---
+const PROJECTS = [
+  {
+    title: 'ZephyroCode Logo',
+    description: 'Literally the logo I use everywhere.',
+    link: 'https://zephyrocode.github.io',
+    github: 'https://github.com/ZephyroCode/zephyrocode.github.io',
+    image: '/projects/zephyrocode-logo.png',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+  },
+]
+---
+
+{
+  PROJECTS.map((project) => (
+    <article>
+      <h3 class='text-lg text-red-300/80 font-semibold mb-1'>
+        {project.title}
+      </h3>
+      <p class='text-white/80 text-sm text-pretty mb-3'>
+        {project.description}
+      </p>
+      <ul class='flex gap-2 mb-3'>
+        {project.tags.map((tag) => (
+          <li class='text-xs text-sky-200 border border-sky-600 py-0.5 px-1.5 rounded-full'>
+            {tag}
+          </li>
+        ))}
+      </ul>
+      <img
+        class='rounded shadow-lg shadow-white/10 mb-4'
+        src={project.image}
+        alt={`Project Screenshot from ${project.image}`}
+      />
+      <a
+        class='rounded-full border text-xs border-sky-300/90 py-1 px-2 text-white/80 hover:bg-sky-100/15 hover:scale-105 active:bg-sky-100/10 transition-all mr-2'
+        href={project.link}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Check it out!
+      </a>
+      <a
+        class='rounded-full border text-xs border-sky-300/90 py-1 px-2 text-white/80 hover:bg-sky-100/15 hover:scale-105 active:bg-sky-100/10 transition-all'
+        href={project.github}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Code
+      </a>
+    </article>
+  ))
+}

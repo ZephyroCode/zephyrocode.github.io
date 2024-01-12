@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Badge from '../components/Badge.astro'
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import GitHubIcon from '../components/icons/GitHub.astro'
+import MailHeartIcon from '../components/icons/MailHeart.astro'
+import Social from '../components/Social.astro'
+import Experience from '../components/Experience.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import BriefcaseIcon from '../components/icons/Briefcase.astro'
+import CodeIcon from '../components/icons/Code.astro'
+import Projects from '../components/Projects.astro'
+---
+
+<Layout
+  title='ZephyroCode - Frontend Web Developer'
+  description='Hire Wilver to work on your website. Frontend Web Developer.'
+>
+  <main class='px-4'>
+    <SectionContainer>
+      <img
+        src='/profile.webp'
+        alt='Wilver Salazar Picture'
+        class='rounded-full size-12 mb-1'
+      />
+      <h1
+        class='text-white text-xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-2 lg:pb-4'
+      >
+        Hey! I'm Wilver <a
+          href='https://linkedin.com/in/wilver-salazar'
+          rel='noopener noreferrer'
+          target='_blank'
+          class='flex justify-center items-center'
+        >
+          <Badge>Available for job</Badge>
+        </a>
+      </h1>
+      <h2
+        class='text-l md:text-xl text-white opacity-70 mb-4 text-wrap max-w-[500px]'
+      >
+        <span class='text-sky-200'>Frontend Web Developer</span> going through second
+        year at the university. <span class='text-red-200/80'
+          >Based in Venezuela.
+        </span>
+      </h2>
+      <nav class='flex gap-x-2 flex-wrap gap-2'>
+        <Social href='http://linkedin.com/in/wilver-salazar'>
+          <LinkedInIcon class='size-3 md:size-5' />
+          LinkedIn
+        </Social>
+        <Social href='http://github.com/ZephyroCode'>
+          <GitHubIcon class='size-3 md:size-5' />
+          GitHub
+        </Social>
+        <Social href='mailto:wilversmithsl@gmial.com'>
+          <MailHeartIcon class='size-4 md:size-6' />
+          wilversmithsl@gmail.com
+        </Social>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id='experience'>
+      <h2
+        class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
+      >
+        <BriefcaseIcon class='size-7' />
+        Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id='projects'>
+      <h2
+        class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
+      >
+        <CodeIcon class='size-7' />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style></style>
