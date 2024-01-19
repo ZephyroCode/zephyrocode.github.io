@@ -65,7 +65,7 @@ const PROJECTS = [
       <p class='text-white/80 text-sm text-pretty mb-3'>
         {project.description}
       </p>
-      <ul class='flex gap-2 mb-3'>
+      <ul class='flex flex-wrap gap-2 mb-3'>
         {project.tags.map((tag) => (
           <li class='text-[0.6rem] text-sky-200 border border-sky-600 py-0.5 px-1.5 rounded-full'>
             {tag}
@@ -89,7 +89,7 @@ const PROJECTS = [
         <LinkIcon class='size-4' /> Code
       </a>
       <img
-        class='rounded-lg shadow-lg shadow-white/10 mt-4 w-[85%]'
+        class='rounded-lg shadow-lg shadow-white/10 mt-4'
         src={project.image}
         alt={`Project Screenshot from ${project.image}`}
       />
