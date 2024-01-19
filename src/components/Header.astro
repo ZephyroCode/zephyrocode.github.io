@@ -3,12 +3,14 @@ import HeaderLink from './HeaderLink.astro'
 ---
 
 <header
-  class='bg-slate-800 opacity-80 sticky top-3 w-fit mx-auto rounded-2xl px-3 py-1 mt-3 mb-28'
+  class='bg-slate-800 opacity-80 sticky top-3 w-fit mx-auto rounded-2xl px-3 py-1 mt-3'
 >
-  <nav class='flex flex-row justify-center gap-x-4'>
+  <nav class='flex flex-row justify-center flex-wrap gap-x-4'>
     <HeaderLink href='/'>Home</HeaderLink>
     <HeaderLink href='/blog'>Blog</HeaderLink>
     <HeaderLink href='/#experience'>Experience</HeaderLink>
     <HeaderLink href='/#projects'>Projects</HeaderLink>
+    <HeaderLink href='/about'>About me</HeaderLink>
+    <HeaderLink href='/contact'>Contact</HeaderLink>
   </nav>
 </header>

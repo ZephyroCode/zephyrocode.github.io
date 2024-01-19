@@ -8,6 +8,7 @@ import Social from '../components/Social.astro'
 import Experience from '../components/Experience.astro'
 import SectionContainer from '../components/SectionContainer.astro'
 import BriefcaseIcon from '../components/icons/Briefcase.astro'
+import CoffeeIcon from '../components/icons/Coffee.astro'
 import CodeIcon from '../components/icons/Code.astro'
 import Projects from '../components/Projects.astro'
 ---
@@ -16,8 +17,8 @@ import Projects from '../components/Projects.astro'
   title='ZephyroCode - Frontend Web Developer'
   description='Hire Wilver to work on your website. Frontend Web Developer.'
 >
-  <main class='px-4'>
-    <SectionContainer>
+  <main class='px-4 mt-28'>
+    <SectionContainer className='mb-28'>
       <img
         src='/profile.webp'
         alt='Wilver Salazar Picture'
@@ -44,11 +45,11 @@ import Projects from '../components/Projects.astro'
         </span>
       </h2>
       <nav class='flex gap-x-2 flex-wrap gap-2'>
-        <Social href='http://linkedin.com/in/wilver-salazar'>
+        <Social href='https://linkedin.com/in/wilver-salazar'>
           <LinkedInIcon class='size-3 md:size-5' />
           LinkedIn
         </Social>
-        <Social href='http://github.com/ZephyroCode'>
+        <Social href='https://github.com/ZephyroCode'>
           <GitHubIcon class='size-3 md:size-5' />
           GitHub
         </Social>
@@ -56,9 +57,13 @@ import Projects from '../components/Projects.astro'
           <MailHeartIcon class='size-4 md:size-6' />
           wilversmithsl@gmail.com
         </Social>
+        <Social href='https://www.buymeacoffee.com/zephyrocode'>
+          <CoffeeIcon class='size-3 md:size-6' />
+          BuyMeACoffee
+        </Social>
       </nav>
     </SectionContainer>
-    <SectionContainer id='experience'>
+    <SectionContainer id='experience' className='mb-28'>
       <h2
         class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
       >
@@ -67,7 +72,7 @@ import Projects from '../components/Projects.astro'
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id='projects'>
+    <SectionContainer id='projects' className='mb-16'>
       <h2
         class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
       >

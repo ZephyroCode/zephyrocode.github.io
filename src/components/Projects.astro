@@ -1,11 +1,56 @@
 ---
+import LinkIcon from '../components/icons/Link.astro'
+
 const PROJECTS = [
   {
-    title: 'ZephyroCode Logo',
-    description: 'Literally the logo I use everywhere.',
+    title: 'Zephyr Students System',
+    description:
+      'Simple Students System created as an assignment for university.',
+    link: 'https://zephyr-students-system.netlify.app',
+    github: 'https://github.com/ZephyroCode/students-system',
+    image: '/projects/students-system.webp',
+    tags: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'SASS',
+      'React',
+      'LocalStorage',
+      'Netlify',
+    ],
+  },
+  {
+    title: 'Zephyr Nights Theme',
+    description: 'A Color Theme for Visual Studio Code.',
     link: 'https://zephyrocode.github.io',
-    github: 'https://github.com/ZephyroCode/zephyrocode.github.io',
-    image: '/projects/zephyrocode-logo.png',
+    github: 'https://github.com/ZephyroCode/zephyr-nights-theme',
+    image: '/projects/zephyr-nights-theme.webp',
+    tags: ['JSON'],
+  },
+  {
+    title: 'Tasks App',
+    description:
+      'Tasks App created to practice how to use the localStorage API.',
+    link: 'https://zephyr-tasks-app.netlify.app',
+    github: 'https://github.com/ZephyroCode/tasks-app',
+    image: '/projects/tasks-app.webp',
+    tags: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'SASS',
+      'React',
+      'LocalStorage',
+      'Netlify',
+    ],
+  },
+  {
+    title: 'SkyDead News',
+    description:
+      'A news landing page I created to practice basic concepts when I started studying Frontnd Web Development.',
+    link: 'https://zephyrocode.github.io/skydead-news',
+    github: 'https://github.com/ZephyroCode/skydead-news',
+    image: '/projects/skydead-news.webp',
     tags: ['HTML', 'CSS', 'JavaScript'],
   },
 ]
@@ -13,7 +58,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map((project) => (
-    <article>
+    <article class='mb-10'>
       <h3 class='text-lg text-red-300/80 font-semibold mb-1'>
         {project.title}
       </h3>
@@ -22,32 +67,32 @@ const PROJECTS = [
       </p>
       <ul class='flex gap-2 mb-3'>
         {project.tags.map((tag) => (
-          <li class='text-xs text-sky-200 border border-sky-600 py-0.5 px-1.5 rounded-full'>
+          <li class='text-[0.6rem] text-sky-200 border border-sky-600 py-0.5 px-1.5 rounded-full'>
             {tag}
           </li>
         ))}
       </ul>
-      <img
-        class='rounded shadow-lg shadow-white/10 mb-4'
-        src={project.image}
-        alt={`Project Screenshot from ${project.image}`}
-      />
       <a
-        class='rounded-full border text-xs border-sky-300/90 py-1 px-2 text-white/80 hover:bg-sky-100/15 hover:scale-105 active:bg-sky-100/10 transition-all mr-2'
+        class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all inline-flex justify-center items-center w-fit gap-x-1 mr-2'
         href={project.link}
         target='_blank'
         rel='noopener noreferrer'
       >
-        Check it out!
+        <LinkIcon class='size-4' /> Check it out!
       </a>
       <a
-        class='rounded-full border text-xs border-sky-300/90 py-1 px-2 text-white/80 hover:bg-sky-100/15 hover:scale-105 active:bg-sky-100/10 transition-all'
+        class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all inline-flex justify-center items-center w-fit gap-x-1'
         href={project.github}
         target='_blank'
         rel='noopener noreferrer'
       >
-        Code
+        <LinkIcon class='size-4' /> Code
       </a>
+      <img
+        class='rounded-lg shadow-lg shadow-white/10 mt-4 w-[85%]'
+        src={project.image}
+        alt={`Project Screenshot from ${project.image}`}
+      />
     </article>
   ))
 }

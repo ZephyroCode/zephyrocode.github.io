@@ -8,7 +8,7 @@
   "description": "Personal web which works as portfolio and blog at the same time",
   "license": "MIT",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
