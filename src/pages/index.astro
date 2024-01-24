@@ -11,6 +11,14 @@ import BriefcaseIcon from '../components/icons/Briefcase.astro'
 import CoffeeIcon from '../components/icons/Coffee.astro'
 import CodeIcon from '../components/icons/Code.astro'
 import Projects from '../components/Projects.astro'
+import PostCard from '../components/PostCard.astro'
+
+import { formatBlogPosts } from '../js/utils'
+
+const POSTS = await Astro.glob('./blog/posts/*.md')
+const formattedPosts = formatBlogPosts(POSTS, {
+  limit: 4,
+})
 ---
 
 <Layout
@@ -53,7 +61,7 @@ import Projects from '../components/Projects.astro'
           <GitHubIcon class='size-3 md:size-5' />
           GitHub
         </Social>
-        <Social href='mailto:wilversmithsl@gmial.com'>
+        <Social href='mailto:wilversmithsl@gmail.com'>
           <MailHeartIcon class='size-4 md:size-6' />
           wilversmithsl@gmail.com
         </Social>
@@ -80,6 +88,21 @@ import Projects from '../components/Projects.astro'
         Projects
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer className='mb-8 md:mb-16'>
+      <h2
+        class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
+      >
+        <CodeIcon class='size-7' />
+        Latest Posts
+      </h2>
+      <div class='flex justify-center items-start gap-2 flex-wrap'>
+        {
+          formattedPosts.map((post) => (
+            <PostCard frontmatter={post.frontmatter} url={post.url} />
+          ))
+        }
+      </div>
     </SectionContainer>
   </main>
 </Layout>

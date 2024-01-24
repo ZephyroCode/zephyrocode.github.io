@@ -1,11 +1,15 @@
 ---
 interface Props {
-  href: string;
+  href: string
 }
 
-const {href} = Astro.props
+const { href } = Astro.props
 ---
 
-<a href={href} rel="noopener noreferrer" class="text-sky-500 hover:text-sky-200 transition-all">
+<a
+  href={href}
+  rel='noopener noreferrer'
+  class='text-sky-500 hover:text-sky-200 transition-all'
+>
   <slot />
 </a>

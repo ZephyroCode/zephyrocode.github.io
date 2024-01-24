@@ -1,0 +1,42 @@
+---
+import Badge from './Badge.astro'
+
+import { slugify, formatDate } from '../js/utils'
+
+const { frontmatter, url } = Astro.props
+
+const { title, date, author, image, description, categories } = frontmatter
+---
+
+<article class='flex justify-start items-start flex-col max-w-44 max-h-[370px]'>
+  <p class='flex gap-1 flex-wrap justify-start items-center capitalize mb-3'>
+    {
+      categories.map((category) => (
+        <a href={`/categories/${slugify(category)}`}>
+          <Badge>{category}</Badge>
+        </a>
+      ))
+    }
+  </p>
+  <a href={url}>
+    <img
+      class='mb-3 w-[150px] h-[100px] mx-auto rounded'
+      src={image.src}
+      alt={image.alt}
+    />
+  </a>
+  <h3 class='text-red-300 text-base md:text-lg font-semibold mb-1'>
+    <a href={url}>{title}</a>
+  </h3>
+  <p class='text-sm text-white/85'>{description}</p>
+  <span class='text-sky-500 text-xs mb-2'
+    >By <a
+      class='text-sky-400 hover:text-sky-300 transition-colors'
+      href={`/author/${slugify(author)}`}>{author}</a
+    > • {formatDate(date)}</span
+  >
+  <a
+    class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all inline-flex justify-center items-center w-fit gap-x-1'
+    href={url}>Read Post</a
+  >
+</article>

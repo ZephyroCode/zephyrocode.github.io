@@ -1,0 +1,36 @@
+---
+import { slugify, formatDate } from '../js/utils'
+
+const { title, date, author, image, categories } = Astro.props
+---
+
+<header class='flex justify-center items-center flex-col'>
+  <div>
+    <p
+      class='flex gap-x-2 flex-wrap justify-center items-center capitalize mb-2'
+    >
+      {
+        categories.map((category) => (
+          <a
+            class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all'
+            href={`/categories/${slugify(category)}`}
+          >
+            {category}
+          </a>
+        ))
+      }
+    </p>
+  </div>
+  <h1
+    class='text-white text-xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-2 lg:pb-4'
+  >
+    {title}
+  </h1>
+  <span class='text-sky-500 text-sm mb-6'
+    >By <a
+      class='text-sky-400 hover:text-sky-300 transition-colors'
+      href={`/author/${slugify(author)}`}>{author}</a
+    > • {formatDate(date)}</span
+  >
+  <img class='mb-12 w-9/12 rounded-lg' src={image.src} alt={image.alt} />
+</header>
