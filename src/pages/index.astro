@@ -96,7 +96,7 @@ const formattedPosts = formatBlogPosts(POSTS, {
         <CodeIcon class='size-7' />
         Latest Posts
       </h2>
-      <div class='flex justify-center items-start gap-2 flex-wrap'>
+      <div class='flex gap-2 flex-wrap'>
         {
           formattedPosts.map((post) => (
             <PostCard frontmatter={post.frontmatter} url={post.url} />
