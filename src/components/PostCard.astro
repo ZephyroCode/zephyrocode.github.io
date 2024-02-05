@@ -23,7 +23,9 @@ const { title, date, author, image, description, categories } = frontmatter
         ))
       }
     </p>
-    <h3 class='text-red-300 text-sm md:text-base lg:text-lg font-semibold'>
+    <h3
+      class='text-red-300 hover:text-red-200 transition-colors text-sm md:text-base lg:text-lg font-semibold'
+    >
       <a href={url}>{title}</a>
     </h3>
     <p class='text-xs md:text-sm text-white/85'>{description}</p>
