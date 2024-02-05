@@ -8,7 +8,7 @@ const { title, date, author, image, description, categories } = frontmatter
 ---
 
 <Layout title={`ZephyroCode - ${title}`} description={description}>
-  <main class='mx-auto mt-16'>
+  <main class='mx-auto mt-16 mb-10'>
     <PostHeader {title} {description} {date} {author} {image} {categories} />
     <article class='px-4 lg:w-[740px] text-pretty'>
       <slot />
