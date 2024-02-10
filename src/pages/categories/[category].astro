@@ -1,5 +1,8 @@
 ---
-import { slugify } from '../../js/utils'
+import PostCard from '../../components/PostCard.astro'
+import SectionContainer from '../../components/SectionContainer.astro'
+import { slugify, formatBlogPosts } from '../../js/utils'
+import Layout from '../../layouts/Layout.astro'
 
 export async function getStaticPaths() {
   return [
@@ -40,6 +43,42 @@ export async function getStaticPaths() {
 
 const { category } = Astro.params
 const { name } = Astro.props
+
+const POSTS = await Astro.glob('../blog/posts/*.md')
+const formattedPosts = formatBlogPosts(POSTS)
+const categoryPosts = formattedPosts.filter(
+  (post) =>
+    slugify(
+      post.frontmatter.categories.filter((cat) => cat === category).toString()
+    ) === category
+)
 ---
 
-{name}
+<Layout
+  title={`ZephyroCode - ${name} Posts`}
+  description='Personal blog to share stories, experiences, and more!'
+>
+  <h1
+    class='text-center text-white text-xl md:text-3xl lg:text-4xl font-bold mt-14 mb-4'
+  >
+    ZephyroCode Blog
+  </h1>
+  <main class='px-4 mb-20'>
+    <h2
+      class='text-center text-sky-200/80 text-xl md:text-2xl lg:text-3xl font-semibold'
+    >
+      These are the posts that belongs to the <span class='text-red-400/90'
+        >{name}</span
+      > category.
+    </h2>
+    <SectionContainer
+      className='flex justify-center items-start my-12 gap-3 flex-wrap'
+    >
+      {
+        categoryPosts.map((post) => (
+          <PostCard frontmatter={post.frontmatter} url={post.url} />
+        ))
+      }
+    </SectionContainer>
+  </main>
+</Layout>
