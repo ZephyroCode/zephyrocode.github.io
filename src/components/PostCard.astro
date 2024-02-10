@@ -8,7 +8,6 @@ const { frontmatter, url } = Astro.props
 const { title, date, author, image, description, categories } = frontmatter
 ---
 
-<!-- flex justify-start items-start w-fit gap-x-2 -->
 <article class='grid grid-cols-5 grid-rows-1 gap-2'>
   <a href={url} class='col-span-2'>
     <img class='rounded aspect-auto' src={image.src} alt={image.alt} />
