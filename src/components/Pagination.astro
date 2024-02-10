@@ -1,0 +1,26 @@
+---
+const { prevUrl, nextUrl } = Astro.props
+---
+
+<nav>
+  {
+    prevUrl && (
+      <a
+        class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all inline-flex justify-center items-center w-fit gap-x-1 mr-2'
+        href={prevUrl}
+      >
+        Previous Page
+      </a>
+    )
+  }
+  {
+    nextUrl && (
+      <a
+        class='rounded-lg border text-xs bg-sky-300/25 border-sky-500/90 py-1 px-2 text-white/80 hover:text-white/95 hover:bg-sky-200/15 active:bg-sky-100/10 transition-all inline-flex justify-center items-center w-fit gap-x-1'
+        href={nextUrl}
+      >
+        Next Page
+      </a>
+    )
+  }
+</nav>

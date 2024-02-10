@@ -1,12 +1,25 @@
 ---
+interface Props {
+  page: any
+}
+
 import Layout from '../../layouts/Layout.astro'
 import SectionContainer from '../../components/SectionContainer.astro'
 import PostCard from '../../components/PostCard.astro'
 
 import { formatBlogPosts } from '../../js/utils'
+import Pagination from '../../components/Pagination.astro'
 
-const POSTS = await Astro.glob('./posts/*.md')
-const formattedPosts = formatBlogPosts(POSTS)
+export async function getStaticPaths({ paginate }) {
+  const POSTS = await Astro.glob('./posts/*.md')
+  const formattedPosts = formatBlogPosts(POSTS)
+
+  return paginate(formattedPosts, {
+    pageSize: 3,
+  })
+}
+
+const { page } = Astro.props
 ---
 
 <Layout
@@ -28,10 +41,11 @@ const formattedPosts = formatBlogPosts(POSTS)
       className='flex justify-center items-start my-12 gap-3 flex-wrap'
     >
       {
-        formattedPosts.map((post) => (
+        page.data.map((post) => (
           <PostCard frontmatter={post.frontmatter} url={post.url} />
         ))
       }
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     </SectionContainer>
   </main>
 </Layout>
