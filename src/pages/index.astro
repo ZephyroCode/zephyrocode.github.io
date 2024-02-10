@@ -17,7 +17,7 @@ import { formatBlogPosts } from '../js/utils'
 
 const POSTS = await Astro.glob('./blog/posts/*.md')
 const formattedPosts = formatBlogPosts(POSTS, {
-  limit: 4,
+  limit: 3,
 })
 ---
 
