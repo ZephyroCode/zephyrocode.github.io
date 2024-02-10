@@ -32,5 +32,5 @@ const { title, date, author, image, categories } = Astro.props
       href={`/author/${slugify(author)}`}>{author}</a
     > • {formatDate(date)}</span
   >
-  <img class='mb-12 w-11/12 rounded-lg' src={image.src} alt={image.alt} />
+  <img class='mb-12 w-3/4 rounded-lg' src={image.src} alt={image.alt} />
 </header>
