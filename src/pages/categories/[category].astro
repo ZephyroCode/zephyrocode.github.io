@@ -1,8 +1,10 @@
 ---
-import PostCard from '../../components/PostCard.astro'
-import SectionContainer from '../../components/SectionContainer.astro'
-import { slugify, formatBlogPosts } from '../../js/utils'
-import Layout from '../../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+
+import PostCard from '@components/PostCard.astro'
+import SectionContainer from '@components/SectionContainer.astro'
+
+import { slugify, formatBlogPosts } from '@/js/utils'
 
 export async function getStaticPaths() {
   return [
@@ -44,7 +46,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params
 const { name } = Astro.props
 
-const POSTS = await Astro.glob('../blog/posts/*.md')
+const POSTS = await Astro.glob('@blog/posts/*.md')
 const formattedPosts = formatBlogPosts(POSTS)
 const categoryPosts = formattedPosts.filter(
   (post) =>

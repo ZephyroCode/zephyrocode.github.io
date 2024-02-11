@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/BlogPostLayout.astro'
+layout: '@/layouts/BlogPostLayout.astro'
 title: "My JavaScript Notes"
 date: 2024-01-16
 author: "Wilver Salazar"

@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/BlogPostLayout.astro'
+layout: '@/layouts/BlogPostLayout.astro'
 title: "My Web Development Roadmap"
 date: 2024-01-18
 author: "Wilver Salazar"

@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/BlogPostLayout.astro'
+layout: '@/layouts/BlogPostLayout.astro'
 title: '"This is not for me..."'
 date: 2024-01-19
 author: "Wilver Salazar"

@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/BlogPostLayout.astro'
+layout: '@/layouts/BlogPostLayout.astro'
 title: "My Visual Studio Code Extensions"
 date: 2024-01-17
 author: "Wilver Salazar"
