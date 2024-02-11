@@ -8,4 +8,6 @@ This one is based on the design made by [@midudev]('https://github.com/midudev')
 
 ## Credits
 
-[@midudev]('https://github.com/midudev') - Design, base ideas and inspiration.
+- [@midudev]('https://github.com/midudev') - Design, base ideas and inspiration.
+- [Tabler Icons]('https://tabler.io/icons') - Most icons I got them there.
+- [SVGL]('https://svgl.vercel.app') - I got some icons from there.
