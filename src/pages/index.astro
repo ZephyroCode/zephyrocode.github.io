@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Badge from '../components/Badge.astro'
+import HighlightBadge from '../components/HighlightBadge.astro'
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
 import GitHubIcon from '../components/icons/GitHub.astro'
 import MailHeartIcon from '../components/icons/MailHeart.astro'
@@ -39,9 +39,9 @@ const formattedPosts = formatBlogPosts(POSTS, {
           href='https://linkedin.com/in/wilver-salazar'
           rel='noopener noreferrer'
           target='_blank'
-          class='flex justify-center items-center'
+          class='flex justify-center items-center hover:scale-105 transition'
         >
-          <Badge>Available for job</Badge>
+          <HighlightBadge>Available for job</HighlightBadge>
         </a>
       </h1>
       <h2
