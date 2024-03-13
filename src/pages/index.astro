@@ -10,9 +10,11 @@ import HighlightBadge from '@components/HighlightBadge.astro'
 import LinkedInIcon from '@components/icons/LinkedIn.astro'
 import MailHeartIcon from '@components/icons/MailHeart.astro'
 import PostCard from '@components/PostCard.astro'
+import ProfileIcon from '@components/icons/Profile.astro'
 import Projects from '@components/Projects.astro'
 import SectionContainer from '@components/SectionContainer.astro'
 import Social from '@components/Social.astro'
+import WriteIcon from '@components/icons/Write.astro'
 
 import { formatBlogPosts } from '../js/utils'
 
@@ -94,7 +96,7 @@ const formattedPosts = formatBlogPosts(POSTS, {
       <h2
         class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
       >
-        <CodeIcon class='size-7' />
+        <ProfileIcon class='size-7' />
         About Me
       </h2>
       <div class='flex gap-4 flex-col md:flex-row justify-center items-center'>
@@ -134,7 +136,7 @@ const formattedPosts = formatBlogPosts(POSTS, {
       <h2
         class='text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center'
       >
-        <CodeIcon class='size-7' />
+        <WriteIcon class='size-7' />
         Latest Posts
       </h2>
       <div class='flex gap-2 flex-wrap'>
